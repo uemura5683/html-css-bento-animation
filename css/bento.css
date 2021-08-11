@@ -9,11 +9,11 @@ body, div, span, ul, li {
     font: inherit;
     vertical-align: baseline;
 }
-body {
-   font-family: 'Open Sans', sans-serif;  
-}
 *, *::before, *::after {
     box-sizing: border-box;
+}
+*::before, *::after {
+    content: '';
 }
 
 
@@ -107,7 +107,6 @@ content
     right: 10%;
 }
 #bento .bento__egg__element:before, #bento .bento__egg__element:after {
-    content: '';
     position: absolute;
     background: white;
     width: 25%;
@@ -142,7 +141,6 @@ content
 }
 #bento .bento__chicken__element:before,
 #bento .bento__chicken__element:after {
-    content: '';
     position: absolute;
 }
 #bento .bento__chicken__pattern {
@@ -170,7 +168,6 @@ content
 }
 #bento .bento__chicken__pattern:before,
 #bento .bento__chicken__pattern:after {
-    content: '';
     position: absolute;
 }
 #bento .bento__chicken__pattern:before {
@@ -206,7 +203,6 @@ content
 }
 #bento .bento__sukiyaki .sukiyakientry:before {
     position: absolute;
-    content: '';
     transform: translateY(-50%) translateX(-50%);
     -webkit-transform: translateY(-50%) translateX(-50%);
     border-radius: 60% 70% 50% 30% / 80% 80% 80% 80%;
@@ -1053,8 +1049,8 @@ content
     padding: 20% 0 0 0;
     position: absolute;
     background: white;
-    content: "";
     filter: blur(2vw);
+    will-change: filter;
     z-index: 50;
     border-radius: 60% 50% 50% 30% / 20% 30% 30% 50%;
     left: 0;
@@ -1092,6 +1088,7 @@ content
                 transform: translateX(-50%);
         left: 50%;
         filter: blur(8vw);
+        will-change: filter;
         animation:3s linear infinite mokumokusp 5s;
     }
     #bento .mokumoku.no2,
